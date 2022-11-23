@@ -1953,7 +1953,7 @@ Specify a different name for either index to resolve this issue.`);
       for (const result of results) {
         result.set(
           include.association.as,
-          map.get(result.get(include.association.sourceKey)),
+          map.get(result.get(include.association.sourceKey, _.omit(options, nonCascadingOptions))),
           { raw: true },
         );
       }
